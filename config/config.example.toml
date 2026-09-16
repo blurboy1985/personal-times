@@ -1,0 +1,30 @@
+# Copy to ~/.config/personal-times/config.toml (kept outside the repo).
+# Every key is optional; the values below are the defaults.
+
+# Public base URL used in the 7am email / Telegram link.
+public_url = "https://paper.example.com"
+
+host = "127.0.0.1"
+port = 8740
+
+# Where editions (personal data) are stored. Created 0700.
+data_dir = "~/.local/share/personal-times"
+
+[sources]
+google_token = "~/.hermes/google_token.json"   # read-only use; never written back
+portfolio_dir = "~/portfolio"
+
+[editor]
+codex_bin = "codex"
+model = "gpt-6-astra"
+reasoning_effort = "medium"
+timeout_seconds = 420
+
+[delivery]
+channels = ["email", "telegram"]
+email_to = "you@example.com"
+
+[auth]
+session_days = 30
+# Set to false only for plain-http local testing.
+cookie_secure = true

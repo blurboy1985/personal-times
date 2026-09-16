@@ -1,0 +1,10 @@
+[Unit]
+Description=Print The Personal Times at 06:35 SGT (delivered at 07:00 by Hermes)
+
+[Timer]
+OnCalendar=*-*-* 06:35:00 Asia/Singapore
+Persistent=true
+AccuracySec=1min
+
+[Install]
+WantedBy=timers.target

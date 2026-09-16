@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en-SG">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#140d08" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Sign in · The Personal Times</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  </head>
+  <body class="gate">
+    <canvas id="desk" aria-hidden="true"></canvas>
+    <main class="gate__wrap">
+      <form class="pass" id="pass" novalidate>
+        <p class="pass__kicker">Subscriber Entrance</p>
+        <h1 class="pass__title">The Personal Times</h1>
+        <p class="pass__rule">Est. 2026 · Singapore · Delivered 7 a.m.</p>
+        <div class="pass__passkey" id="passkey-block" hidden>
+          <button class="pass__submit" type="button" id="passkey-btn">Sign in with passkey</button>
+          <p class="pass__hint">Face ID, Touch ID or your device PIN</p>
+        </div>
+        <div id="password-block">
+          <input class="sr-only" type="text" name="username" autocomplete="username" value="reader" tabindex="-1" aria-hidden="true" />
+          <label class="field">
+            <span>Password</span>
+            <input id="password" name="password" type="password" autocomplete="current-password" required />
+          </label>
+          <label class="field" id="code-field" hidden>
+            <span>Authenticator code</span>
+            <input id="code" name="code" inputmode="numeric" autocomplete="one-time-code" pattern="[0-9]*" maxlength="6" />
+          </label>
+          <button class="pass__submit" type="submit" id="password-submit">Unfold today's paper</button>
+        </div>
+        <p class="pass__error" id="error" role="alert"></p>
+        <button class="pass__alt" type="button" id="use-password" hidden>Use password &amp; code instead</button>
+        <p class="pass__note" id="note">Private edition · one subscriber</p>
+      </form>
+    </main>
+    <script type="module" src="/src/login.js"></script>
+  </body>
+</html>

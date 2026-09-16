@@ -1,0 +1,19 @@
+[Unit]
+Description=The Personal Times optional legacy reader (loopback; Sites is primary)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+WorkingDirectory=%h/personal-times
+ExecStart=%h/personal-times/.venv/bin/python -m dailytimes serve
+Restart=on-failure
+RestartSec=5
+Environment=PYTHONUNBUFFERED=1
+# This host has a history of memory-pressure hangs; a reader app stays small.
+MemoryHigh=200M
+MemoryMax=320M
+NoNewPrivileges=yes
+PrivateTmp=yes
+
+[Install]
+WantedBy=default.target

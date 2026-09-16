@@ -1,0 +1,16 @@
+[Unit]
+Description=The Personal Times — collect, edit and upload today's edition to ChatGPT Sites
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=%h/personal-times
+# codex lives in ~/.local/bin
+Environment=PATH=%h/.local/bin:/home/linuxbrew/.linuxbrew/bin:/usr/local/bin:/usr/bin:/bin
+Environment=PYTHONUNBUFFERED=1
+ExecStart=%h/personal-times/deploy/personal-times-run.sh build
+TimeoutStartSec=900
+Nice=5
+MemoryHigh=768M
+MemoryMax=1200M

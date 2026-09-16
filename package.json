@@ -1,0 +1,9 @@
+{
+  "name": "personal-times-sites",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node sites/build.mjs",
+    "test": "node --test sites/worker.test.mjs"
+  }
+}

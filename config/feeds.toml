@@ -1,0 +1,43 @@
+# News desks for The Personal Times. Each desk pulls every feed, keeps items from
+# the last `window_hours`, de-duplicates by headline, and hands the candidates to
+# the editor (Codex), which picks and summarises 3–5 stories per desk.
+window_hours = 30
+per_desk = 28
+
+[[desk]]
+key = "singapore"
+title = "Singapore"
+feeds = [
+  { name = "CNA", url = "https://www.channelnewsasia.com/api/v1/rss-outbound-feed?_format=xml&category=10416" },
+  { name = "The Straits Times", url = "https://www.straitstimes.com/news/singapore/rss.xml" },
+  { name = "The Business Times", url = "https://www.businesstimes.com.sg/rss/singapore" },
+]
+
+[[desk]]
+key = "china"
+title = "China"
+feeds = [
+  { name = "SCMP", url = "https://www.scmp.com/rss/4/feed" },
+  { name = "BBC", url = "https://feeds.bbci.co.uk/news/world/asia/china/rss.xml" },
+  { name = "The Straits Times", url = "https://www.straitstimes.com/news/asia/rss.xml" },
+  { name = "CNA", url = "https://www.channelnewsasia.com/api/v1/rss-outbound-feed?_format=xml&category=6511" },
+]
+
+[[desk]]
+key = "us"
+title = "United States"
+feeds = [
+  { name = "NPR", url = "https://feeds.npr.org/1001/rss.xml" },
+  { name = "BBC", url = "https://feeds.bbci.co.uk/news/world/us_and_canada/rss.xml" },
+  { name = "The New York Times", url = "https://rss.nytimes.com/services/xml/rss/nyt/US.xml" },
+  { name = "CNBC", url = "https://www.cnbc.com/id/100003114/device/rss/rss.html" },
+]
+
+[[desk]]
+key = "ai"
+title = "AI"
+feeds = [
+  { name = "TechCrunch", url = "https://techcrunch.com/category/artificial-intelligence/feed/" },
+  { name = "The Verge", url = "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml" },
+  { name = "MIT Technology Review", url = "https://www.technologyreview.com/topic/artificial-intelligence/feed" },
+]
