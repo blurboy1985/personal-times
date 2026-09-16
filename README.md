@@ -125,7 +125,8 @@ editor. Sites only hosts the reader and stores editions.
    the Sites plugin. Keep the Site private.
 3. Create `~/.config/personal-times/sites.json` (file mode 0600) containing `url`,
    `bypass_token` and `upload_key`. Set the same `upload_key` as the `UPLOAD_KEY`
-   secret in Sites. Never put these values in source files or logs.
+   secret in Sites. Never put these values in source files or logs. If your deployed
+   worker expects a different upload header, set `upload_header` in the same file.
 
 Once it's configured, `build` uploads each new edition, and `deliver` retries the
 upload before sending, so a failed upload never sends a broken link.

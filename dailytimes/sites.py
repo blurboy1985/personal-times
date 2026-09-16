@@ -28,7 +28,7 @@ def publish_file(path: Path, cfg: dict) -> dict:
     response = requests.post(cfg['url'].rstrip('/') + '/api/publish', data=data,
                              headers={'Content-Type': 'application/json',
                                       'OAI-Sites-Authorization': 'Bearer ' + cfg['bypass_token'],
-                                      'X-Upload-Key': cfg['upload_key']},
+                                      cfg.get('upload_header', 'X-Upload-Key'): cfg['upload_key']},
                              timeout=60, allow_redirects=False)
     if response.status_code != 200:
         raise RuntimeError(f'Sites upload failed (HTTP {response.status_code}); edition remains saved locally')
